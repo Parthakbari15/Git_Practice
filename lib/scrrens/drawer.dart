@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:pushnotification/Widgets/listtile.dart';
 
 class Drawer1 extends StatelessWidget {
   @override
@@ -34,63 +35,17 @@ class Drawer1 extends StatelessWidget {
                 accountEmail: Text("partha@zignuts.com"),
               ),
             ),
-            ListTile(
-                title: Text(
-                  "Home",
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.w900),
-                ),
-                trailing: Icon(Icons.home, color: Colors.orange, size: 25),
-                onTap: () => {
-                      Navigator.pop(context),
-                      Fluttertoast.showToast(
-                        msg: "Home",
-                        toastLength: Toast.LENGTH_LONG,
-                        gravity: ToastGravity.CENTER,
-                        backgroundColor: Colors.grey,
-                        // timeInSecForIosWeb: 2,
-                        textColor: Colors.lightGreen,
-                      ),
-                    }),
-            ListTile(
-                title: Text(
-                  "Contact",
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.w900),
-                ),
-                trailing:
-                    Icon(Icons.contact_page, color: Colors.orange, size: 25),
-                onTap: () => {
-                      Navigator.pop(context),
-                      Fluttertoast.showToast(
-                        msg: "Contact",
-                        toastLength: Toast.LENGTH_LONG,
-                        gravity: ToastGravity.CENTER,
-                        backgroundColor: Colors.lightGreen,
-                        // timeInSecForIosWeb: 2,
-                        textColor: Colors.white,
-                      ),
-                    }),
-            ListTile(
-                title: Text(
-                  "About Us",
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.w900),
-                ),
-                trailing:
-                    Icon(Icons.contact_page, color: Colors.orange, size: 25),
-                onTap: () => {
-                      Navigator.pop(context),
-                      Fluttertoast.showToast(
-                        msg: "About Us",
-                        toastLength: Toast.LENGTH_LONG,
-                        gravity: ToastGravity.CENTER,
-                        backgroundColor: Colors.lightGreen,
-                        // timeInSecForIosWeb: 2,
-                        textColor: Colors.white,
-                      ),
-                    }),
+            ListTileWidget("Home", "it's Home Page", Icons.home),
+            ListTileWidget("Contact Page", "It's Contact page", Icons.contact_page),
+            ListTileWidget("About Us","About Us", Icons.details),
+            ListTileWidget("Logout","Logged Out",Icons.logout),
+            ListTileWidget("Login", "Logedin",Icons.login),
           ],
+        ),
+      ),
+      body: Center(
+        child: Container(
+          child: Text("Welcome to Home Page"),
         ),
       ),
     );
